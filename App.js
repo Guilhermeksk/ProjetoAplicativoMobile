@@ -1,13 +1,37 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import Home from "/components/Home"
+import Mongagua from '/components/Mongagua';
+import SP from '/components/SP';
+import Santos from '/components/Santos';
+import Osasco from '/components/Osasco';
+import Itanhaem from '/components/Itanhaem';
 
 export default function App() {
+  const Stack = createNativeStackNavigator();
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+
+        
+    
+      <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Guilherme" component={Home} />
+        <Stack.Screen name="Mongagua" component={Mongagua} />
+        <Stack.Screen name="SP" component={SP} />
+        <Stack.Screen name="Santos" component={Santos} />
+        <Stack.Screen name="Osasco" component={Osasco} />
+        <Stack.Screen name="Itanhaem" component={Itanhaem} />
+      </Stack.Navigator>
+    </NavigationContainer>
+ 
+
   );
+  
+
+
 }
 
 const styles = StyleSheet.create({
